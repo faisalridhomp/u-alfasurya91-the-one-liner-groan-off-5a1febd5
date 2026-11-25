@@ -42,6 +42,7 @@ def main():
     with open(path, "rb") as f:
         data = f.read()
     assert data == LINE.encode("utf-8"), "entry.txt bytes differ from LINE"
+    assert data.isascii(), "gate: entry must stay ASCII so bytes == chars"
     assert 1 <= len(data) <= 140, "gate: entry must be 1-140 chars"
     # Two iron-native puns in one line: the iron that presses, answering
     # about wrinkles to work out — that is the whole joke, and it lands in
